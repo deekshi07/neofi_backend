@@ -1,11 +1,14 @@
 from fastapi import FastAPI
-from app.api.routes import auth, events
+from app.api.routes import auth
+from app.db.session import engine
+from app.db.base import Base
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-app.include_router(auth.router, prefix="/api/auth", tags=["Auth"])
-app.include_router(events.router, prefix="/api/events", tags=["Events"])
+app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
 
 @app.get("/")
 def read_root():
-    return {"message": "NeoFi Backend API is running"}
+    return {"message": "Welcome to the NeoFi Backend Challenge"}
