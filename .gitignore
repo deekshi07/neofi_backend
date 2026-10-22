@@ -1,0 +1,26 @@
+# Python byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+neofi_backend/venv/
+
+# Environment Variables & Secrets
+.env
+.env.local
+*.env
+neofi_backend/.env
+
+# Database files
+*.sqlite3
+*.db
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
